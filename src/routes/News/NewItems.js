@@ -3,7 +3,7 @@ import styled from "styled-components";
 const NewItems = ({ subject, content, category, image }) => {
   return (
     <Wrapper>
-      <Image fontSize={"40%"}>
+      <Image sizeWidth={"30%"}>
         <img src={image} alt="image" />
       </Image>
       <div>

@@ -9,6 +9,7 @@ import ContextData from "./contex/Data/ContextData";
 import { useReducer } from "react";
 import ReducerData from "./contex/Data/ReducerData";
 import StateData from "./contex/Data/StateData";
+import Video from "./routes/Video/Video";
 
 function App() {
   const [stateData, dispatchData] = useReducer(ReducerData, StateData);
@@ -19,6 +20,7 @@ function App() {
         <Route path="/shop" component={Shop} />
         <Route path="/courses" component={Courses} />
         <Route path="/news" component={News} />
+        <Route path="/video" component={Video} />
       </ContextData.Provider>
     </Switch>
   );

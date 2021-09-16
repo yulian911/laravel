@@ -1,20 +1,11 @@
 import React from "react";
-import Header from "../../modules/Navigation/Header";
-import Navbar from "../../modules/Navigation/Navbar";
-import classes from "./../../style.module.scss";
+import Office from "../../layauts/office/Office";
 
 const Courses = () => {
   return (
-    <div className={classes.main}>
-      <div className={classes.main__navigation}>
-        <Navbar />
-      </div>
-      <div className={classes.main__content}>
-        {" "}
-        <Header />
-        Courses
-      </div>
-    </div>
+    <Office>
+      <div>Courses</div>
+    </Office>
   );
 };
 

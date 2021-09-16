@@ -14,6 +14,9 @@ const Navbar = () => {
       <div>
         <Link to="/news">News</Link>
       </div>
+      <div>
+        <Link to="/video">Video</Link>
+      </div>
     </div>
   );
 };

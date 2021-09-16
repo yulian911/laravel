@@ -1,0 +1,51 @@
+@import "../../variable.module.scss";
+
+.videoWrapper {
+  position: relative;
+  width: 700px;
+}
+.videoControls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: yellowgreen;
+}
+.videoControlsPlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: yellowgreen;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.videoControlsProgress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+.videoControlsProgress::-webkit-slider-runnable-track {
+  height: 7px;
+  background-color: $color;
+  &:focus {
+    border: none;
+  }
+}
+.videoControlsProgress::-webkit-slider-thumb {
+  background: $lightColor;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  -webkit-appearance: none;
+  margin-top: -4px;
+  &:focus {
+    border: none;
+  }
+}
