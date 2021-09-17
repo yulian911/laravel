@@ -1,5 +1,5 @@
 import React from "react";
-import Progress from "./components/Progress";
+import Progress from "./Progress";
 import classes from "./video.module.scss";
 
 const Controls = ({
@@ -10,6 +10,7 @@ const Controls = ({
   loadedSeconds,
   playedSeconds,
   funcs,
+  fullScreen,
 }) => {
   return (
     <>
@@ -17,14 +18,21 @@ const Controls = ({
         {!playing ? "Play" : "Pause"}
       </div>
       <div className={classes.videoControls}>
-        <input
-          value={volume}
-          type="range"
-          min="0"
-          max="1"
-          step="0.1"
-          onChange={handleVolume}
-        />
+        <div className={classes.videoControls__header}>
+          <div>
+            <input
+              value={volume}
+              type="range"
+              min="0"
+              max="1"
+              step="0.1"
+              onChange={handleVolume}
+            />
+          </div>
+
+          <div onClick={fullScreen}>full</div>
+        </div>
+
         <Progress
           loadedSeconds={loadedSeconds}
           playedSeconds={playedSeconds}

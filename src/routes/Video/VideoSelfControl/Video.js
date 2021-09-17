@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
 import ReactPlayer from "react-player";
-import { API_VIDEO } from "../../baseUrl";
+import { API_VIDEO } from "../../../baseUrl";
 import classes from "./video.module.scss";
 
-import Office from "../../layauts/office/Office";
+import Office from "../../../layauts/office/Office";
 import Controls from "./Controls";
+import screenfull from "screenfull";
 
 const Video = () => {
   const [state, setState] = useState({
@@ -16,6 +17,7 @@ const Video = () => {
 
   const { playing, volume, loadedSeconds, playedSeconds } = state;
   const refPlayer = useRef();
+  const refFullScreen = useRef();
   const handlePlay = () => {
     setState({ ...state, playing: !state.playing });
   };
@@ -32,9 +34,13 @@ const Video = () => {
     // console.log("działa");
   };
 
+  const handleFullScreen = () => {
+    screenfull.toggle(refFullScreen.current);
+  };
+
   return (
     <Office>
-      <div className={classes.videoWrapper}>
+      <div ref={refFullScreen} className={classes.videoWrapper}>
         <ReactPlayer
           url={`${API_VIDEO}/video.mp4`}
           //   url="https://www.youtube.com/watch?v=Rg-hZPkKAAY"
@@ -54,6 +60,7 @@ const Video = () => {
           loadedSeconds={loadedSeconds}
           playedSeconds={playedSeconds}
           funcs={handleProgressControls}
+          fullScreen={handleFullScreen}
         />
       </div>
     </Office>

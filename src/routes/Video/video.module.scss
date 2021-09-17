@@ -1,8 +1,16 @@
 @import "../../variable.module.scss";
 
 .videoWrapper {
-  position: relative;
-  width: 700px;
+  width: 100%;
+  height: 100%;
+  // position: relative;
+  // width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video {
+  width: 60%;
 }
 .videoControls {
   position: absolute;
@@ -11,6 +19,11 @@
   right: 0;
   height: 40px;
   background-color: yellowgreen;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .videoControlsPlay {
   position: absolute;
